@@ -38,8 +38,7 @@
           <h2><%= link_to p.title, p %></h2>
           <p><%= truncate(p.body, length: 270) %></p>
           <h5><%#= p.name %></h5>
-          <h6 class="indexPosts"><%= standard_date_format(p.created_at) %></h6>
-          <h6><%#= p.date %></h6>
+          <h6 class="indexPosts"><%= p.date %></h6>
           </div>
         </div>
       <% end %>

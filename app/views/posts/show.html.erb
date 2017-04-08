@@ -16,8 +16,8 @@
     <!-- </div> -->
     <div class="container fullPost">
       <p><%= @post.body %></p>
-      <h6 class="postDate"><%= standard_date_format(@post.created_at) %></h6>
-      <h6 class="postDate">CATEGORY HERE<%#= @post.category %></h6>
+      <h6 class="postDate"><%= @post.date %></h6>
+      <h6><%= @post.category.title %></h6>
     </div>
   </div>
   <div class="container">
@@ -57,7 +57,8 @@
           <img src="<%= c.image %>">
           <h4>Name: <%= c.name %></h4>
           <p>Comments: <%= c.body %></p>
-          <h6><%= standard_date_format(@post.created_at) %></h6>
+          <h6><%= @post.date %></h6>
+          <h6><%= @post.category %></h6>
           <%= link_to('Delete', post_comment_path(@post, c), method: :delete, data: {confirm: 'Are you sure?'}) %>
         </div>
       <% end %>
