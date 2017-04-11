@@ -34,6 +34,7 @@
     <h2 class="commentForm">Leave a comment...</h2>
     <% @comment.errors.full_messages.join(', ') %>
     <%= form_for [@post, @comment] do |f| %>
+
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, { class: 'form-control' }%>

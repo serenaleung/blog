@@ -21,6 +21,20 @@ class PostsController < ApplicationController
     @ftPost = Post.first(1)
   end
 
+  def update
+    @post = Post.find params[:id]
+    post_params = params.require(:post).permit([:title, :body, :date, :user_id, :category_id])
+
+    if @post.user != current_user
+      flash[:alert] = "You cannot change a post that you did not create"
+      redirect_to post_path(@post)
+    elsif @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
+
   def destroy
   end
 

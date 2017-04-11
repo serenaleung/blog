@@ -8,6 +8,7 @@
         <i class="fa fa-bookmark-o" aria-hidden="true"></i>
       </div>
       <% @ftPost.each do |p| %>
+    
         <h2><%= link_to p.title, p %></h2>
         <p><%= truncate(p.body, length: 400) %></p>
         <h5><%#= p.name %></h5>
