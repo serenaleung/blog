@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: rgb(216, 196, 236);
+// $font-stack:    Helvetica, sans-serif;
+
 .ftSz{
   width: 300px;
   height: 5px;
@@ -60,6 +63,22 @@
 }
 .commentForm {
   clear: both;
+}
+.box {
+  // border-style: solid;
+  // border-width: thin;
+  // border-color: $primary-color;
+  padding: 1em 1em 0em;
+  background: white;
+}
+
+.boxCategories {
+  // border-style: solid;
+  // border-width: thin;
+  // border-color: $primary-color;
+  background: white;
+  padding: 1em 1em 1.5em;
+  margin: 2em 0;
 }
 // .flashNotice {
 //   width: 100%;

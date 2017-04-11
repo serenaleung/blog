@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
-      redirect_to questions_path, notice: 'Thank you for signing up'
+      flash[:notice] = "User created!"
+      redirect_to posts_path, notice: 'Thank you for signing up'
     else
+      flash[:alert] = "Please try again"
       render :new
     end
   end

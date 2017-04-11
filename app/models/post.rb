@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   belongs_to :category, optional: true
   validates :body, presence: true
 
-  # def product_params
-  #   params.require(:post).permit([:title, :body, :date, :category])
-  # end
+
+
 end

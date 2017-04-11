@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Create a new User</h1>
+
+  <!-- first_name, last_name, email, password_digest -->
+
+  <%= form_for(@user) do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
+    <br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+    <br>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>

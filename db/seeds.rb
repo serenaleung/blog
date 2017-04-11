@@ -62,8 +62,8 @@ end
               last_name: Faker::Name.last_name,
               email: Faker::Internet.email,
               date: Faker::Date.backward(14),
-              password: '1234'
-
+              password: '1234',
+              image: 'http://lorempixel.com/g/65/65'
   )
   puts "Users Created"
 end

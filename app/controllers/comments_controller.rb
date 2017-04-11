@@ -1,9 +1,16 @@
 class CommentsController < ApplicationController
+  # before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+
+  belongs_to :user, optional: true
+
   def create
     @post = Post.find(params[:post_id])
     comment_params = params.require(:comment).permit(:image, :name, :body)
     @comment = Comment.new(comment_params)
     @comment.post = @post
+    @comment.image = 'http://lorempixel.com/output/city-q-c-65-65-9.jpg'
+    @comment.user = current_user
 
     # @comment = @post.comments.build(comment_params)
     if @comment.save

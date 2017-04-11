@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Category - <%= @category.title %></h1>
+  <p>Post(s) in this category: <%= @category.posts.count %></p>
+  <% @category.posts.each do |p| %>
+    <div class="boxCategories">
+      <h3><%= link_to(p.title, post_path(p.id)) %></h3>
+    </div>
+  <% end %>
+</div>

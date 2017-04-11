@@ -17,7 +17,7 @@
     <div class="container fullPost">
       <p><%= @post.body %></p>
       <h6 class="postDate"><%= @post.date %></h6>
-      <h6><%= @post.category.title %></h6>
+      <h5><%= link_to(@post.category.title.upcase , category_path(@post.category.id)) %></h5>
     </div>
   </div>
   <div class="container">
@@ -31,7 +31,7 @@
     <br>
   <hr/>
   <div class="">
-    <h2  class="commentForm">Leave a comment...</h2>
+    <h2 class="commentForm">Leave a comment...</h2>
     <% @comment.errors.full_messages.join(', ') %>
     <%= form_for [@post, @comment] do |f| %>
     <div class="form-group">
@@ -57,8 +57,7 @@
           <img src="<%= c.image %>">
           <h4>Name: <%= c.name %></h4>
           <p>Comments: <%= c.body %></p>
-          <h6><%= @post.date %></h6>
-          <h6><%= @post.category %></h6>
+          <h6><%= c.date %></h6>
           <%= link_to('Delete', post_comment_path(@post, c), method: :delete, data: {confirm: 'Are you sure?'}) %>
         </div>
       <% end %>

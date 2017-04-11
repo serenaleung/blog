@@ -14,14 +14,15 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
-    <% if flash[:notice] %>
-    <!-- <hr> -->
-    <div class="flash-notice flashNotice"><%= flash[:notice] %></div>
-    <% elsif flash[:alert] %>
-    <div class="flash-alert flashNotice"><%= flash[:alert] %></div>
-    <!-- <hr> -->
-    <% end %>
-    <%= yield %>
+      <%= render "layouts/navbar" %>
+      <% if flash[:notice] %>
+      <hr>
+      <div class="alert alert-success flash-notice flashNotice"><%= flash[:notice] %></div>
+      <% elsif flash[:alert] %>
+      <div class="alert alert-danger flash-alert flashNotice"><%= flash[:alert] %></div>
+      <hr>
+      <%= notice || alert %>
+      <% end %>
+      <%= yield %>
   </body>
 </html>

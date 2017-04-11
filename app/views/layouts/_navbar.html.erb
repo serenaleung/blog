@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="#">About <span class="sr-only">(current)</span></a></li>
+        <li><%= link_to('About', about_index_path) %><span class="sr-only">(current)</span></a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -22,8 +22,14 @@
           </div>
           <!-- <button type="submit" class="btn btn-default">Submit</button> -->
         </form></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Login</a></li>
+        <% if user_signed_in? %>
+          <span>Hello <%= current_user.first_name %>,</span>
+          <li><%= link_to('Logout', sessions_path,
+          method: :delete, data: {confirm: 'Logout?'}) %></li>
+        <% else %>
+          <li><%= link_to('Sign Up', new_user_path) %></li>
+          <li><%= link_to('Login', new_session_path) %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
