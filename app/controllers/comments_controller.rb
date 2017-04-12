@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   # belongs_to :user, optional: true
 
   def create
+    byebug
     @post = Post.find(params[:post_id])
     comment_params = params.require(:comment).permit(:image, :name, :body)
     @comment = Comment.new(comment_params)

@@ -12,8 +12,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params)
     # @post = Post.new post_params
     @post.user = current_user
+
+    @post.save
   end
 
   def index
@@ -22,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find params[:id]
+    @post = Post.find(params[:id])
     post_params = params.require(:post).permit([:title, :body, :date, :user_id, :category_id])
 
     if @post.user != current_user
