@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Edit Post</h1>
+  <%= @post.errors.full_messages.join(', ') %>
+
+  <%# if you pass a pesisted ActiveRecord object to the `form_for` (in the DB)
+      then `form_for` will submit a `PATCH` request (instead of POST) using a
+      hidden_field technique and the URL for the form will be in the case the
+      `update` action url which is in our case post_path(@post) %>
+      
+  <%= form_for @post do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <br>
+    <div>
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-control commentHeight" %>
+    </div>
+    <br>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

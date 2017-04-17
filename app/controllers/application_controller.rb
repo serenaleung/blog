@@ -22,4 +22,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id])
   end
   helper_method :current_user
+
+  def can_edit_post?(post)
+    user_signed_in? && (post.user == current_user)
+  end
+  helper_method :can_edit_post?
+
 end
