@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :about, only: [:index]
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :edit, :create]
 
 # prevents password to show in address bar
   resources :sessions, only: [:new, :create] do
