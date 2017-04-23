@@ -23,10 +23,10 @@
           <!-- <button type="submit" class="btn btn-default">Submit</button> -->
         </form></li>
         <% if user_signed_in? %>
-          <ul class="nav navbar-nav navbar-right">
+          <!-- <ul class="nav navbar-nav navbar-right">
 
-            <li><%= link_to 'Change Password', edit_user_path(@user) %></li>
-          </ul>
+            <li><%#= link_to 'Change Password', edit_user_path(@user) %></li>
+          </ul> -->
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "#{current_user.first_name}, Logout", sessions_path, method: :delete, data: {confirm: 'Logout?'} %></li>
           </ul>
