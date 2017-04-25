@@ -20,6 +20,10 @@ class Ability
     can [:edit, :destroy], Post do |post|
       post.user == user
     end
+
+    can [:edit, :update], User do |u|
+      u == user
+    end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions

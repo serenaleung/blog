@@ -22,4 +22,14 @@ class UsersController < ApplicationController
                                   :password,
                                   :password_confirmation])
   end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(the_params)
+      # Notify the user that his/her profile was updated
+      flash.now[:success] = "Your changes have been saved"
+    end
+  end
 end
