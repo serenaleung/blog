@@ -1,27 +1,7 @@
 <div class="container">
   <h1>Admin Dashboard</h1>
 
-  <!-- <h5>Number of posts</h5> <%#= Post.all.count %> -->
-  <h5>Edit User Information</h5>
+  <h5></h5>
 
-  <h5>Change Password</h5>
-  <%= @user.errors.full_messages.join(', ') %>
-
-  <%= form_for @user, url: users_path(@user), html: { method: :put } do |f| %>
-    <div>
-      <%= f.label :current_password %>
-      <%= f.text_field :current_password, class: "form-control" %>
-    </div>
-    <br>
-    <div>
-      <%= f.label :new_password %>
-      <%= f.text_area :new_password, class: "form-control commentHeight" %>
-    </div>
-    <div>
-      <%= f.label :new_password_confirmation %>
-      <%= f.text_area :new_password_confirmation, class: "form-control commentHeight" %>
-    </div>
-    <br>
-    <%= f.submit "Submit", class: "btn btn-default" %>
-  <% end %>
+  <p></p>
 </div>

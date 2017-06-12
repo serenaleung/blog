@@ -1,25 +1,5 @@
-# README
+# Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blog with user authentication, posts, comments, admin panel, categories, likes etc.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# blog
+Created using Ruby on Rails, HTML, CSS, Bootstrap, AJAX, and PostgreSQL.
